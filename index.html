@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081827">
+  <meta name="description" content="Soluciones Logísticas S & M: transporte y distribución de carga general, alimentaria y materiales peligrosos en México.">
+  <meta property="og:title" content="Soluciones Logísticas S & M | Transporte y distribución">
+  <meta property="og:description" content="Capacidad operativa para mover carga general, alimentaria y peligrosa con control, seguridad y trazabilidad.">
+  <title>Soluciones Logísticas S &amp; M | Transporte y distribución</title>
+  <style>
+    :root {
+      --ink: #071625;
+      --ink-2: #0b2439;
+      --ink-3: #103650;
+      --paper: #f5f8fa;
+      --white: #ffffff;
+      --line: rgba(7, 22, 37, .12);
+      --muted: #667887;
+      --muted-dark: #a6b8c4;
+      --cyan: #6ce3e6;
+      --cyan-strong: #24c6d0;
+      --amber: #f4b94c;
+      --amber-soft: #fff4d8;
+      --shadow: 0 24px 70px rgba(5, 18, 31, .13);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+    body.menu-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input, select, textarea { font: inherit; }
+    .container { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--cyan);
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--amber); }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 21px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: var(--cyan);
+      color: var(--ink);
+      font-size: .91rem;
+      font-weight: 850;
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: #9bf0f0; box-shadow: 0 12px 28px rgba(36, 198, 208, .24); }
+    .button.secondary { background: transparent; border-color: rgba(255,255,255,.26); color: var(--white); }
+    .button.secondary:hover { background: rgba(255,255,255,.1); box-shadow: none; }
+    .button.dark { background: var(--ink); color: var(--white); }
+    .button.dark:hover { background: var(--ink-3); }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      background: rgba(7, 22, 37, .78);
+      backdrop-filter: blur(18px);
+    }
+    .nav { height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; color: var(--white); font-size: .95rem; font-weight: 900; letter-spacing: .045em; line-height: 1.05; }
+    .brand-mark { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid rgba(108,227,230,.55); border-radius: 12px 4px 12px 4px; color: var(--cyan); font-size: .82rem; font-weight: 950; }
+    .brand span { color: var(--cyan); }
+    .nav-links { display: flex; align-items: center; gap: 25px; color: #cedbe2; font-size: .83rem; font-weight: 650; }
+    .nav-links a { transition: color .2s ease; }
+    .nav-links a:hover { color: var(--cyan); }
+    .nav-cta { min-height: 42px; padding: 0 17px; font-size: .79rem; }
+    .menu-toggle { display: none; border: 0; background: transparent; color: var(--white); cursor: pointer; font-size: 1.45rem; }
+
+    .hero {
+      min-height: 760px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background: linear-gradient(90deg, rgba(4, 15, 27, .98) 0%, rgba(5, 22, 37, .91) 40%, rgba(5, 22, 37, .42) 78%, rgba(5, 22, 37, .7) 100%), url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=2200&q=86") center/cover;
+    }
+    .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(108,227,230,.08), transparent 36%); pointer-events: none; }
+    .hero::after { content: ""; position: absolute; right: -13%; top: 11%; width: 600px; height: 600px; border: 1px solid rgba(108,227,230,.16); border-radius: 50%; box-shadow: 0 0 0 54px rgba(108,227,230,.035), 0 0 0 108px rgba(108,227,230,.025); pointer-events: none; }
+    .hero-content { position: relative; z-index: 1; padding: 118px 0 80px; max-width: 730px; }
+    .hero h1 { max-width: 720px; margin: 22px 0 22px; font-size: clamp(3.05rem, 7vw, 6.75rem); line-height: .94; letter-spacing: -.067em; }
+    .hero h1 em { color: var(--cyan); font-style: normal; }
+    .hero-copy { max-width: 640px; margin: 0; color: #d3e1e8; font-size: clamp(1rem, 1.6vw, 1.2rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 34px; }
+    .hero-note { display: flex; align-items: center; gap: 12px; margin-top: 56px; color: #b7cbd5; font-size: .8rem; }
+    .signal { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 0 5px rgba(244,185,76,.15); }
+    .hero-grid-mark { position: absolute; right: 6%; bottom: 52px; z-index: 1; width: 220px; color: rgba(255,255,255,.42); font-size: .68rem; letter-spacing: .12em; text-align: right; text-transform: uppercase; }
+    .hero-grid-mark b { display: block; margin-bottom: 7px; color: var(--white); font-size: 1rem; letter-spacing: .02em; }
+
+    .metrics { position: relative; z-index: 3; margin-top: -58px; }
+    .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .metric { min-height: 125px; padding: 23px; border: 1px solid rgba(255,255,255,.1); border-radius: 18px; background: rgba(10, 36, 57, .95); color: var(--white); box-shadow: var(--shadow); }
+    .metric strong { display: block; margin-bottom: 7px; color: var(--cyan); font-size: 1.42rem; line-height: 1.1; }
+    .metric span { display: block; color: #adc0ca; font-size: .78rem; line-height: 1.35; }
+
+    section { padding: 118px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 35px; margin-bottom: 45px; }
+    .section-head h2 { max-width: 630px; margin: 12px 0 0; font-size: clamp(2.2rem, 4.5vw, 4.15rem); line-height: .98; letter-spacing: -.06em; }
+    .section-head p { max-width: 420px; margin: 0; color: var(--muted); font-size: .98rem; }
+    .dark-section { color: var(--white); background: var(--ink); }
+    .dark-section .section-head p { color: var(--muted-dark); }
+
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .service-card { position: relative; min-height: 280px; padding: 28px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+    .service-card:hover { transform: translateY(-6px); border-color: rgba(36,198,208,.55); box-shadow: var(--shadow); }
+    .service-card.featured { color: var(--white); border-color: transparent; background: linear-gradient(140deg, var(--ink-2), var(--ink-3)); }
+    .service-card.featured::after { content: "01"; position: absolute; right: 20px; bottom: -18px; color: rgba(108,227,230,.12); font-size: 7rem; font-weight: 950; line-height: 1; }
+    .service-number { color: var(--amber); font-size: .76rem; font-weight: 900; letter-spacing: .12em; }
+    .service-icon { display: grid; place-items: center; width: 48px; height: 48px; margin: 23px 0 22px; border-radius: 15px; color: var(--cyan-strong); background: #e8fbfc; font-size: 1.25rem; }
+    .featured .service-icon { color: var(--ink); background: var(--cyan); }
+    .service-card h3 { position: relative; z-index: 1; margin: 0 0 11px; font-size: 1.36rem; letter-spacing: -.025em; }
+    .service-card p { position: relative; z-index: 1; margin: 0; color: var(--muted); font-size: .89rem; }
+    .featured p { color: #bcd0d9; }
+
+    .speciality-layout { display: grid; grid-template-columns: .92fr 1.08fr; gap: 70px; align-items: center; }
+    .speciality-visual { min-height: 560px; position: relative; overflow: hidden; border-radius: 32px; background: linear-gradient(180deg, transparent 40%, rgba(7,22,37,.9)), url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1500&q=86") center/cover; }
+    .speciality-visual::after { content: "OPERACIÓN CONTROLADA"; position: absolute; left: 24px; bottom: 24px; padding: 9px 12px; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; color: var(--white); font-size: .68rem; font-weight: 850; letter-spacing: .14em; }
+    .speciality-copy h2 { max-width: 600px; margin: 14px 0 20px; font-size: clamp(2.3rem, 4.7vw, 4.3rem); line-height: .98; letter-spacing: -.062em; }
+    .speciality-copy > p { max-width: 570px; color: var(--muted); font-size: 1rem; }
+    .speciality-points { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; margin-top: 30px; }
+    .point { padding: 17px; border: 1px solid var(--line); border-radius: 16px; background: var(--white); }
+    .point b { display: block; margin-bottom: 4px; font-size: .92rem; }
+    .point span { color: var(--muted); font-size: .79rem; line-height: 1.35; }
+
+    .capability-wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 20px; }
+    .capability-card { padding: 37px; border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius); background: linear-gradient(150deg, #0b2b43, #081b2d); }
+    .capability-card h3 { max-width: 450px; margin: 14px 0 17px; font-size: clamp(1.8rem, 3vw, 2.8rem); line-height: 1; letter-spacing: -.05em; }
+    .capability-card > p { max-width: 500px; color: #aec1cc; font-size: .91rem; }
+    .unit-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px; margin-top: 28px; }
+    .unit { padding: 13px 14px; border: 1px solid rgba(108,227,230,.17); border-radius: 12px; color: #d8ebef; font-size: .8rem; }
+    .unit b { display: block; margin-bottom: 2px; color: var(--cyan); font-size: .93rem; }
+    .control-card { padding: 37px; border-radius: var(--radius); background: var(--amber-soft); }
+    .control-card h3 { margin: 14px 0 22px; font-size: 2rem; line-height: 1; letter-spacing: -.05em; }
+    .control-list { display: grid; gap: 15px; }
+    .control-list div { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; }
+    .control-list i { display: grid; place-items: center; width: 25px; height: 25px; border-radius: 50%; background: var(--ink); color: var(--cyan); font-size: .72rem; font-style: normal; font-weight: 900; }
+    .control-list b { display: block; font-size: .89rem; }
+    .control-list span { display: block; color: #70716c; font-size: .79rem; }
+
+    .sector-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+    .sector { min-height: 175px; display: flex; flex-direction: column; justify-content: space-between; padding: 21px; border-radius: 18px; background: #0c2940; border: 1px solid rgba(255,255,255,.09); transition: background .2s ease, transform .2s ease; }
+    .sector:hover { transform: translateY(-4px); background: #123b59; }
+    .sector-no { color: var(--amber); font-size: .74rem; font-weight: 900; }
+    .sector strong { max-width: 130px; color: var(--white); font-size: 1.02rem; line-height: 1.08; letter-spacing: -.03em; }
+    .sector small { color: #a5bbc7; font-size: .74rem; }
+
+    .coverage { background: #e9f0f2; }
+    .coverage-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .coverage-copy h2 { margin: 14px 0 18px; font-size: clamp(2.4rem, 4.5vw, 4.2rem); line-height: .96; letter-spacing: -.065em; }
+    .coverage-copy p { max-width: 525px; color: var(--muted); }
+    .route-list { display: grid; gap: 10px; margin-top: 28px; }
+    .route { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px; border: 1px solid rgba(7,22,37,.1); border-radius: 15px; background: rgba(255,255,255,.68); }
+    .route b { font-size: .92rem; }
+    .route span { color: var(--muted); font-size: .77rem; text-align: right; }
+    .coverage-map { min-height: 470px; position: relative; overflow: hidden; border-radius: 30px; background: linear-gradient(180deg, rgba(7,22,37,.22), rgba(7,22,37,.85)), url("https://images.unsplash.com/photo-1524666041070-9c876415a7bb?auto=format&fit=crop&w=1200&q=84") center/cover; }
+    .coverage-badge { position: absolute; right: 20px; bottom: 20px; max-width: 210px; padding: 18px; border-radius: 16px; color: var(--white); background: rgba(7,22,37,.86); backdrop-filter: blur(8px); }
+    .coverage-badge b { display: block; margin-bottom: 5px; color: var(--cyan); font-size: 1.35rem; }
+    .coverage-badge span { color: #bfd0d8; font-size: .77rem; }
+
+    .contact { color: var(--white); background: var(--ink); }
+    .contact-layout { display: grid; grid-template-columns: .83fr 1.17fr; gap: 62px; align-items: start; }
+    .contact-copy h2 { max-width: 510px; margin: 13px 0 18px; font-size: clamp(2.6rem, 5vw, 4.8rem); line-height: .94; letter-spacing: -.07em; }
+    .contact-copy > p { max-width: 470px; color: #afc2cc; }
+    .contact-note { display: flex; gap: 13px; margin-top: 35px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.13); color: #b8cbd3; font-size: .8rem; }
+    .contact-note strong { display: block; margin-bottom: 4px; color: var(--white); }
+    .contact-form { padding: 30px; border-radius: 23px; background: var(--white); color: var(--ink); }
+    .contact-form h3 { margin: 0 0 21px; font-size: 1.35rem; letter-spacing: -.03em; }
+    form { display: grid; gap: 12px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    label { display: grid; gap: 6px; color: #526675; font-size: .72rem; font-weight: 800; }
+    input, select, textarea { width: 100%; border: 1px solid #d5e0e5; border-radius: 11px; outline: 0; padding: 13px 14px; color: var(--ink); background: #f8fafb; font-size: .86rem; }
+    input:focus, select:focus, textarea:focus { border-color: var(--cyan-strong); box-shadow: 0 0 0 3px rgba(36,198,208,.12); }
+    textarea { min-height: 115px; resize: vertical; }
+    .form-help { margin: 0; color: var(--muted); font-size: .73rem; }
+
+    footer { padding: 32px 0 45px; color: #94a9b6; background: #05111d; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 25px; flex-wrap: wrap; }
+    .footer-brand { color: var(--white); font-size: .9rem; font-weight: 900; letter-spacing: .04em; }
+    .footer-brand span { color: var(--cyan); }
+    .footer-copy { margin-top: 5px; font-size: .75rem; }
+    .footer-links { display: flex; gap: 18px; color: #b8c8d0; font-size: .75rem; }
+    .footer-links a:hover { color: var(--cyan); }
+
+    @media (max-width: 980px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .nav-cta { display: none; }
+      .nav-links.mobile { position: absolute; inset: 78px 0 auto; display: grid; gap: 0; padding: 12px 24px 22px; background: rgba(7,22,37,.98); border-top: 1px solid rgba(255,255,255,.1); }
+      .nav-links.mobile a { padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.09); }
+      .metrics-grid, .sector-grid { grid-template-columns: repeat(2, 1fr); }
+      .speciality-layout, .coverage-layout, .contact-layout { grid-template-columns: 1fr; gap: 38px; }
+      .speciality-visual { min-height: 420px; }
+      .coverage-map { min-height: 390px; }
+    }
+    @media (max-width: 700px) {
+      .container { width: min(var(--max), calc(100% - 34px)); }
+      .hero { min-height: 710px; }
+      .hero-content { padding-top: 114px; }
+      .hero-grid-mark { display: none; }
+      section { padding: 82px 0; }
+      .section-head { display: block; margin-bottom: 32px; }
+      .section-head p { margin-top: 18px; }
+      .service-grid, .capability-wrap { grid-template-columns: 1fr; }
+      .speciality-points, .form-row { grid-template-columns: 1fr; }
+      .service-card { min-height: 245px; }
+      .capability-card, .control-card, .contact-form { padding: 25px; }
+    }
+    @media (max-width: 480px) {
+      .metrics-grid, .sector-grid, .unit-list { grid-template-columns: 1fr; }
+      .metric { min-height: auto; }
+      .hero h1 { font-size: 3.45rem; }
+      .hero-actions .button { width: 100%; }
+      .footer-links { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Soluciones Logísticas S y M, inicio">
+        <span class="brand-mark">S&M</span>
+        <span>SOLUCIONES<br><span>LOGÍSTICAS</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#servicios">Servicios</a>
+        <a href="#especialidad">Especialidad</a>
+        <a href="#capacidad">Capacidad</a>
+        <a href="#cobertura">Cobertura</a>
+      </div>
+      <a class="button nav-cta" href="#contacto">Solicitar cotización</a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-content">
+        <span class="eyebrow">Transporte · distribución · control operativo</span>
+        <h1>Movemos tu operación con <em>precisión.</em></h1>
+        <p class="hero-copy">Soluciones de transporte terrestre para carga general, alimentaria y materiales peligrosos. Diseñamos cada servicio con la unidad, la ruta y el nivel de control que tu operación exige.</p>
+        <div class="hero-actions">
+          <a class="button" href="#contacto">Cotizar un servicio <span aria-hidden="true">↗</span></a>
+          <a class="button secondary" href="#servicios">Conocer capacidades</a>
+        </div>
+        <div class="hero-note"><span class="signal"></span> Atención para operaciones locales, foráneas y multipunto</div>
+      </div>
+      <div class="hero-grid-mark"><b>S &amp; M / 01</b>Transporte y distribución<br>Soluciones con criterio operativo</div>
+    </section>
+
+    <div class="metrics">
+      <div class="container metrics-grid">
+        <div class="metric"><strong>General</strong><span>Movimiento de mercancía seca, industrial y de consumo.</span></div>
+        <div class="metric"><strong>Alimentaria</strong><span>Distribución con atención a tiempos, higiene y ventanas.</span></div>
+        <div class="metric"><strong>Peligrosa</strong><span>Servicio sujeto a clasificación, documentación y seguridad.</span></div>
+        <div class="metric"><strong>Local + nacional</strong><span>Cobertura flexible desde el Valle de México.</span></div>
+      </div>
+    </div>
+
+    <section id="servicios">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">Qué hacemos</span><h2>Un servicio de transporte que entiende la operación.</h2></div>
+          <p>Desde una entrega puntual hasta una red recurrente de distribución: integramos capacidad, seguimiento y disciplina de ejecución.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card featured"><span class="service-number">01 / CARGA GENERAL</span><div class="service-icon">▣</div><h3>Carga general</h3><p>Traslado de mercancía seca, insumos, producto terminado y materiales industriales en rutas locales y foráneas.</p></article>
+          <article class="service-card"><span class="service-number">02 / ALIMENTARIA</span><div class="service-icon">✦</div><h3>Carga alimentaria</h3><p>Distribución de alimentos y bebidas con control de ventanas, secuencia de entrega y condiciones de servicio.</p></article>
+          <article class="service-card"><span class="service-number">03 / HAZMAT</span><div class="service-icon">⚠</div><h3>Materiales peligrosos</h3><p>Operación especializada de acuerdo con la naturaleza de la carga, requisitos documentales y condiciones de seguridad aplicables.</p></article>
+          <article class="service-card"><span class="service-number">04 / DISTRIBUCIÓN</span><div class="service-icon">↗</div><h3>Distribución multipunto</h3><p>Rutas lecheras, entregas secuenciadas, recolecciones adicionales y distribución a puntos de venta.</p></article>
+          <article class="service-card"><span class="service-number">05 / CAPACIDAD</span><div class="service-icon">◫</div><h3>Servicio dedicado</h3><p>Unidades asignadas para operaciones recurrentes, programas de entrega y necesidades de capacidad estable.</p></article>
+          <article class="service-card"><span class="service-number">06 / RESPUESTA</span><div class="service-icon">⌁</div><h3>Viajes spot y urgentes</h3><p>Respuesta para picos de demanda, rutas extraordinarias, posicionamientos y requerimientos de corto plazo.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="especialidad">
+      <div class="container speciality-layout">
+        <div class="speciality-visual" role="img" aria-label="Operación de transporte y distribución"></div>
+        <div class="speciality-copy">
+          <span class="eyebrow">Especialidad operativa</span>
+          <h2>Cada tipo de carga necesita una forma distinta de moverse.</h2>
+          <p>La propuesta se construye con base en origen, destino, frecuencia, tipo de unidad, peso, maniobras, ventanas de entrega y nivel de riesgo. Así evitamos cotizaciones genéricas que no soportan la realidad de la operación.</p>
+          <div class="speciality-points">
+            <div class="point"><b>Seguridad y documentación</b><span>Revisión de requisitos antes de programar el movimiento.</span></div>
+            <div class="point"><b>Seguimiento de ruta</b><span>Visibilidad de eventos, citas, entregas y excepciones.</span></div>
+            <div class="point"><b>Ventanas de servicio</b><span>Planeación orientada a citas, secuencias y tiempos reales.</span></div>
+            <div class="point"><b>Escalabilidad</b><span>Capacidad para servicios puntuales o esquemas recurrentes.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-section" id="capacidad">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">Capacidad y control</span><h2>La unidad correcta. El control correcto.</h2></div>
+          <p>Configuramos el servicio de acuerdo con el perfil de carga, la ruta y el nivel de exigencia de la entrega.</p>
+        </div>
+        <div class="capability-wrap">
+          <div class="capability-card">
+            <span class="eyebrow">Flota y modalidades</span>
+            <h3>Capacidad adaptable para diferentes corredores.</h3>
+            <p>Integramos alternativas de equipo para resolver movimientos de última milla, distribución regional y transporte de largo recorrido.</p>
+            <div class="unit-list">
+              <div class="unit"><b>1.5 t / 3.5 t</b>Distribución urbana y última milla</div>
+              <div class="unit"><b>Rabón / Torton</b>Rutas regionales y multipunto</div>
+              <div class="unit"><b>48' / 53'</b>Traslado de mayor volumen</div>
+              <div class="unit"><b>Local / Foráneo</b>Esquemas spot o dedicados</div>
+            </div>
+          </div>
+          <div class="control-card">
+            <span class="eyebrow" style="color:#8e6511">Método de trabajo</span>
+            <h3>Antes de mover, entendemos.</h3>
+            <div class="control-list">
+              <div><i>01</i><p><b>Levantamiento operativo</b><span>Origen, destino, carga, volumen, frecuencia y ventana.</span></p></div>
+              <div><i>02</i><p><b>Diseño del servicio</b><span>Unidad, ruta, modalidad, maniobras y requisitos.</span></p></div>
+              <div><i>03</i><p><b>Programación y seguimiento</b><span>Confirmación de recursos, eventos y excepciones.</span></p></div>
+              <div><i>04</i><p><b>Cierre documental</b><span>Entrega, evidencias y retroalimentación del servicio.</span></p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-section" id="sectores" style="padding-top:0">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">Sectores atendidos</span><h2>Experiencia para mercancías que no pueden detenerse.</h2></div>
+          <p>Soluciones aplicables a operaciones de manufactura, consumo, retail y distribución especializada.</p>
+        </div>
+        <div class="sector-grid">
+          <div class="sector"><span class="sector-no">01</span><strong>Alimentos y bebidas</strong><small>Entrega programada y distribución</small></div>
+          <div class="sector"><span class="sector-no">02</span><strong>Químico y peligroso</strong><small>Control y requisitos de seguridad</small></div>
+          <div class="sector"><span class="sector-no">03</span><strong>Retail y consumo</strong><small>CEDIS, tiendas y puntos de venta</small></div>
+          <div class="sector"><span class="sector-no">04</span><strong>Industrial y manufactura</strong><small>Insumos y producto terminado</small></div>
+          <div class="sector"><span class="sector-no">05</span><strong>Farmacéutico</strong><small>Servicio sensible y trazable</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="coverage" id="cobertura">
+      <div class="container coverage-layout">
+        <div class="coverage-copy">
+          <span class="eyebrow">Cobertura</span>
+          <h2>Del Valle de México hacia los principales corredores.</h2>
+          <p>Planeamos el alcance de cada servicio según la ruta, el tipo de carga y la disponibilidad requerida. La cobertura puede estructurarse como movimiento local, foráneo, dedicado o multipunto.</p>
+          <div class="route-list">
+            <div class="route"><b>Valle de México</b><span>CDMX · Edo. Méx.</span></div>
+            <div class="route"><b>Centro y Bajío</b><span>Qro. · Gto. · SLP · Pue.</span></div>
+            <div class="route"><b>Norte y Occidente</b><span>NL · Jal. · Coah. · Mich.</span></div>
+            <div class="route"><b>Corredores nacionales</b><span>A solicitud y factibilidad</span></div>
+          </div>
+        </div>
+        <div class="coverage-map" role="img" aria-label="Carretera y cobertura de transporte nacional">
+          <div class="coverage-badge"><b>Local + nacional</b><span>Una solución escalable para cada origen, destino y tipo de carga.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="container contact-layout">
+        <div class="contact-copy">
+          <span class="eyebrow">Hablemos de tu operación</span>
+          <h2>Cuéntanos qué necesitas mover.</h2>
+          <p>Compártenos los datos principales y prepararemos una propuesta alineada con el servicio requerido: carga, ruta, unidad, frecuencia y fecha.</p>
+          <div class="contact-note"><span class="signal"></span><div><strong>Contacto comercial</strong>Agrega aquí el teléfono y correo oficiales antes de publicar la página.</div></div>
+        </div>
+        <div class="contact-form">
+          <h3>Solicita una cotización</h3>
+          <form action="mailto:REEMPLAZAR@TUDOMINIO.MX" method="post" enctype="text/plain">
+            <div class="form-row">
+              <label>Nombre / empresa<input name="nombre" type="text" placeholder="Tu nombre o empresa" required></label>
+              <label>Correo<input name="correo" type="email" placeholder="tu@empresa.com" required></label>
+            </div>
+            <div class="form-row">
+              <label>Tipo de carga<select name="carga" required><option value="">Selecciona una opción</option><option>Carga general</option><option>Carga alimentaria</option><option>Materiales peligrosos</option><option>Otra carga</option></select></label>
+              <label>Modalidad<select name="modalidad" required><option value="">Selecciona una opción</option><option>Viaje spot</option><option>Servicio dedicado</option><option>Distribución multipunto</option><option>Renta de unidad</option></select></label>
+            </div>
+            <label>Información del servicio<textarea name="detalle" placeholder="Origen, destino, unidad, volumen y fecha requerida"></textarea></label>
+            <p class="form-help">Este formulario requiere configurar el correo comercial real de la empresa.</p>
+            <button class="button dark" type="submit">Enviar solicitud <span aria-hidden="true">↗</span></button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div><div class="footer-brand">SOLUCIONES <span>LOGÍSTICAS</span> S &amp; M</div><div class="footer-copy">Transporte y distribución con criterio operativo.</div></div>
+      <div class="footer-links"><a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#contacto">Contacto</a></div>
+      <div class="footer-copy">© <span id="year"></span> Soluciones Logísticas S &amp; M</div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('mobile');
+      document.body.classList.toggle('menu-open', open);
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      menuToggle.textContent = open ? '×' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('mobile');
+      document.body.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Abrir menú');
+      menuToggle.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
