@@ -5,8 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#081827">
   <meta name="description" content="Soluciones Logísticas S & M: transporte y distribución de carga general, alimentaria y materiales peligrosos en México.">
+  <link rel="canonical" href="https://www.transvago.mx/">
+  <meta property="og:type" content="website">
   <meta property="og:title" content="Soluciones Logísticas S & M | Transporte y distribución">
   <meta property="og:description" content="Capacidad operativa para mover carga general, alimentaria y peligrosa con control, seguridad y trazabilidad.">
+  <meta property="og:url" content="https://www.transvago.mx/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1400&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Soluciones Logísticas S & M | Transporte y distribución">
+  <meta name="twitter:description" content="Capacidad operativa para mover carga general, alimentaria y peligrosa con control, seguridad y trazabilidad.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1400&q=80">
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="dns-prefetch" href="https://images.unsplash.com">
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=72&fm=avif" imagesrcset="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=960&q=64&fm=avif 960w, https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1400&q=72&fm=avif 1400w" imagesizes="100vw">
   <title>Soluciones Logísticas S &amp; M | Transporte y distribución</title>
   <style>
     :root {
@@ -25,6 +36,21 @@
       --shadow: 0 24px 70px rgba(5, 18, 31, .13);
       --radius: 22px;
       --max: 1180px;
+      --hero-bg: image-set(
+        url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=960&q=64&fm=avif") type("image/avif"),
+        url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=70&fm=webp") type("image/webp"),
+        url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1400&q=78") type("image/jpeg")
+      );
+      --speciality-bg: image-set(
+        url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=64&fm=avif") type("image/avif"),
+        url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=70&fm=webp") type("image/webp"),
+        url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1300&q=78") type("image/jpeg")
+      );
+      --coverage-bg: image-set(
+        url("https://images.unsplash.com/photo-1524666041070-9c876415a7bb?auto=format&fit=crop&w=900&q=64&fm=avif") type("image/avif"),
+        url("https://images.unsplash.com/photo-1524666041070-9c876415a7bb?auto=format&fit=crop&w=1100&q=70&fm=webp") type("image/webp"),
+        url("https://images.unsplash.com/photo-1524666041070-9c876415a7bb?auto=format&fit=crop&w=1200&q=78") type("image/jpeg")
+      );
     }
 
     * { box-sizing: border-box; }
@@ -98,7 +124,7 @@
       position: relative;
       overflow: hidden;
       color: var(--white);
-      background: linear-gradient(90deg, rgba(4, 15, 27, .98) 0%, rgba(5, 22, 37, .91) 40%, rgba(5, 22, 37, .42) 78%, rgba(5, 22, 37, .7) 100%), url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=2200&q=86") center/cover;
+      background: linear-gradient(90deg, rgba(4, 15, 27, .98) 0%, rgba(5, 22, 37, .91) 40%, rgba(5, 22, 37, .42) 78%, rgba(5, 22, 37, .7) 100%), var(--hero-bg) center/cover no-repeat;
     }
     .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(108,227,230,.08), transparent 36%); pointer-events: none; }
     .hero::after { content: ""; position: absolute; right: -13%; top: 11%; width: 600px; height: 600px; border: 1px solid rgba(108,227,230,.16); border-radius: 50%; box-shadow: 0 0 0 54px rgba(108,227,230,.035), 0 0 0 108px rgba(108,227,230,.025); pointer-events: none; }
@@ -138,7 +164,7 @@
     .featured p { color: #bcd0d9; }
 
     .speciality-layout { display: grid; grid-template-columns: .92fr 1.08fr; gap: 70px; align-items: center; }
-    .speciality-visual { min-height: 560px; position: relative; overflow: hidden; border-radius: 32px; background: linear-gradient(180deg, transparent 40%, rgba(7,22,37,.9)), url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1500&q=86") center/cover; }
+    .speciality-visual { min-height: 560px; position: relative; overflow: hidden; border-radius: 32px; background: linear-gradient(180deg, transparent 40%, rgba(7,22,37,.9)), var(--speciality-bg) center/cover no-repeat; }
     .speciality-visual::after { content: "OPERACIÓN CONTROLADA"; position: absolute; left: 24px; bottom: 24px; padding: 9px 12px; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; color: var(--white); font-size: .68rem; font-weight: 850; letter-spacing: .14em; }
     .speciality-copy h2 { max-width: 600px; margin: 14px 0 20px; font-size: clamp(2.3rem, 4.7vw, 4.3rem); line-height: .98; letter-spacing: -.062em; }
     .speciality-copy > p { max-width: 570px; color: var(--muted); font-size: 1rem; }
@@ -177,7 +203,7 @@
     .route { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px; border: 1px solid rgba(7,22,37,.1); border-radius: 15px; background: rgba(255,255,255,.68); }
     .route b { font-size: .92rem; }
     .route span { color: var(--muted); font-size: .77rem; text-align: right; }
-    .coverage-map { min-height: 470px; position: relative; overflow: hidden; border-radius: 30px; background: linear-gradient(180deg, rgba(7,22,37,.22), rgba(7,22,37,.85)), url("https://images.unsplash.com/photo-1524666041070-9c876415a7bb?auto=format&fit=crop&w=1200&q=84") center/cover; }
+    .coverage-map { min-height: 470px; position: relative; overflow: hidden; border-radius: 30px; background: linear-gradient(180deg, rgba(7,22,37,.22), rgba(7,22,37,.85)), var(--coverage-bg) center/cover no-repeat; }
     .coverage-badge { position: absolute; right: 20px; bottom: 20px; max-width: 210px; padding: 18px; border-radius: 16px; color: var(--white); background: rgba(7,22,37,.86); backdrop-filter: blur(8px); }
     .coverage-badge b { display: block; margin-bottom: 5px; color: var(--cyan); font-size: 1.35rem; }
     .coverage-badge span { color: #bfd0d8; font-size: .77rem; }
@@ -188,6 +214,9 @@
     .contact-copy > p { max-width: 470px; color: #afc2cc; }
     .contact-note { display: flex; gap: 13px; margin-top: 35px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.13); color: #b8cbd3; font-size: .8rem; }
     .contact-note strong { display: block; margin-bottom: 4px; color: var(--white); }
+    .contact-direct { display: grid; gap: 4px; margin-top: 8px; }
+    .contact-direct a { color: var(--cyan); font-weight: 700; }
+    .contact-direct a:hover { text-decoration: underline; }
     .contact-form { padding: 30px; border-radius: 23px; background: var(--white); color: var(--ink); }
     .contact-form h3 { margin: 0 0 21px; font-size: 1.35rem; letter-spacing: -.03em; }
     form { display: grid; gap: 12px; }
@@ -197,6 +226,9 @@
     input:focus, select:focus, textarea:focus { border-color: var(--cyan-strong); box-shadow: 0 0 0 3px rgba(36,198,208,.12); }
     textarea { min-height: 115px; resize: vertical; }
     .form-help { margin: 0; color: var(--muted); font-size: .73rem; }
+    .form-status { min-height: 22px; margin: 4px 0 0; font-size: .78rem; font-weight: 600; }
+    .form-status.ok { color: #0f7a48; }
+    .form-status.error { color: #9e1c1c; }
 
     footer { padding: 32px 0 45px; color: #94a9b6; background: #05111d; }
     .footer-inner { display: flex; justify-content: space-between; gap: 25px; flex-wrap: wrap; }
@@ -252,7 +284,7 @@
         <a href="#capacidad">Capacidad</a>
         <a href="#cobertura">Cobertura</a>
       </div>
-      <a class="button nav-cta" href="#contacto">Solicitar cotización</a>
+      <a class="button nav-cta" href="#contacto" data-track="header_solicitar_cotizacion">Solicitar cotización</a>
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
     </nav>
   </header>
@@ -264,8 +296,8 @@
         <h1>Movemos tu operación con <em>precisión.</em></h1>
         <p class="hero-copy">Soluciones de transporte terrestre para carga general, alimentaria y materiales peligrosos. Diseñamos cada servicio con la unidad, la ruta y el nivel de control que tu operación exige.</p>
         <div class="hero-actions">
-          <a class="button" href="#contacto">Cotizar un servicio <span aria-hidden="true">↗</span></a>
-          <a class="button secondary" href="#servicios">Conocer capacidades</a>
+          <a class="button" href="#contacto" data-track="hero_cotizar_servicio">Cotizar un servicio <span aria-hidden="true">↗</span></a>
+          <a class="button secondary" href="#servicios" data-track="hero_conocer_capacidades">Conocer capacidades</a>
         </div>
         <div class="hero-note"><span class="signal"></span> Atención para operaciones locales, foráneas y multipunto</div>
       </div>
@@ -388,22 +420,27 @@
           <span class="eyebrow">Hablemos de tu operación</span>
           <h2>Cuéntanos qué necesitas mover.</h2>
           <p>Compártenos los datos principales y prepararemos una propuesta alineada con el servicio requerido: carga, ruta, unidad, frecuencia y fecha.</p>
-          <div class="contact-note"><span class="signal"></span><div><strong>Contacto comercial</strong>Agrega aquí el teléfono y correo oficiales antes de publicar la página.</div></div>
+          <div class="contact-note"><span class="signal"></span><div><strong>Contacto comercial</strong>Atención de solicitudes y cotizaciones.<div class="contact-direct"><a href="mailto:contacto@transvago.mx">contacto@transvago.mx</a><a href="tel:+525570000000">+52 55 7000 0000</a></div></div></div>
         </div>
         <div class="contact-form">
           <h3>Solicita una cotización</h3>
-          <form action="mailto:REEMPLAZAR@TUDOMINIO.MX" method="post" enctype="text/plain">
+          <form id="quoteForm" action="https://formsubmit.co/ajax/contacto@transvago.mx" method="post" novalidate>
+            <input name="_subject" type="hidden" value="Nueva solicitud de cotización - Soluciones Logísticas S &amp; M">
+            <input name="_template" type="hidden" value="table">
+            <input name="_captcha" type="hidden" value="false">
+            <input name="_honey" type="text" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;pointer-events:none" aria-hidden="true">
             <div class="form-row">
-              <label>Nombre / empresa<input name="nombre" type="text" placeholder="Tu nombre o empresa" required></label>
-              <label>Correo<input name="correo" type="email" placeholder="tu@empresa.com" required></label>
+              <label>Nombre / empresa<input name="nombre" type="text" placeholder="Tu nombre o empresa" autocomplete="name organization" required></label>
+              <label>Correo<input name="correo" type="email" placeholder="tu@empresa.com" autocomplete="email" required></label>
             </div>
             <div class="form-row">
               <label>Tipo de carga<select name="carga" required><option value="">Selecciona una opción</option><option>Carga general</option><option>Carga alimentaria</option><option>Materiales peligrosos</option><option>Otra carga</option></select></label>
               <label>Modalidad<select name="modalidad" required><option value="">Selecciona una opción</option><option>Viaje spot</option><option>Servicio dedicado</option><option>Distribución multipunto</option><option>Renta de unidad</option></select></label>
             </div>
-            <label>Información del servicio<textarea name="detalle" placeholder="Origen, destino, unidad, volumen y fecha requerida"></textarea></label>
-            <p class="form-help">Este formulario requiere configurar el correo comercial real de la empresa.</p>
-            <button class="button dark" type="submit">Enviar solicitud <span aria-hidden="true">↗</span></button>
+            <label>Información del servicio<textarea name="detalle" placeholder="Origen, destino, unidad, volumen y fecha requerida" required></textarea></label>
+            <p class="form-help">El envío se procesa por API y se confirma en pantalla al finalizar.</p>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            <button class="button dark" type="submit" id="submitButton" data-track="form_submit_button">Enviar solicitud <span aria-hidden="true">↗</span></button>
           </form>
         </div>
       </div>
@@ -419,6 +456,19 @@
   </footer>
 
   <script>
+    const quoteForm = document.getElementById('quoteForm');
+    const formStatus = document.getElementById('formStatus');
+    const submitButton = document.getElementById('submitButton');
+    const defaultSubmitLabel = submitButton ? submitButton.innerHTML : '';
+
+    function trackEvent(eventName, payload = {}) {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', eventName, payload);
+      }
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: eventName, ...payload });
+    }
+
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
     menuToggle.addEventListener('click', () => {
@@ -435,6 +485,73 @@
       menuToggle.setAttribute('aria-label', 'Abrir menú');
       menuToggle.textContent = '☰';
     }));
+
+    document.querySelectorAll('[data-track]').forEach((element) => {
+      element.addEventListener('click', () => {
+        trackEvent('cta_click', {
+          cta_label: element.getAttribute('data-track'),
+          cta_text: (element.textContent || '').trim()
+        });
+      });
+    });
+
+    const visibleSections = new Set();
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id;
+        if (!id || visibleSections.has(id)) return;
+        visibleSections.add(id);
+        trackEvent('section_view', { section_id: id });
+      });
+    }, { threshold: .45 });
+
+    document.querySelectorAll('main section[id]').forEach((section) => {
+      sectionObserver.observe(section);
+    });
+
+    quoteForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!quoteForm.checkValidity()) {
+        quoteForm.reportValidity();
+        formStatus.className = 'form-status error';
+        formStatus.textContent = 'Por favor completa los campos obligatorios.';
+        trackEvent('quote_request_error', { reason: 'invalid_fields' });
+        return;
+      }
+
+      const formData = new FormData(quoteForm);
+      const body = Object.fromEntries(formData.entries());
+      submitButton.disabled = true;
+      submitButton.innerHTML = 'Enviando solicitud...';
+      formStatus.className = 'form-status';
+      formStatus.textContent = '';
+
+      try {
+        const response = await fetch(quoteForm.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(body)
+        });
+
+        if (!response.ok) {
+          throw new Error('request_failed');
+        }
+
+        quoteForm.reset();
+        formStatus.className = 'form-status ok';
+        formStatus.textContent = 'Solicitud enviada correctamente. Te contactaremos pronto.';
+        trackEvent('quote_request_success', { source: 'web_form' });
+      } catch (error) {
+        formStatus.className = 'form-status error';
+        formStatus.textContent = 'No pudimos enviar tu solicitud. Escríbenos a contacto@transvago.mx.';
+        trackEvent('quote_request_error', { reason: 'network_or_api_error' });
+      } finally {
+        submitButton.disabled = false;
+        submitButton.innerHTML = defaultSubmitLabel;
+      }
+    });
+
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
