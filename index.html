@@ -18,6 +18,18 @@
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
   <link rel="dns-prefetch" href="https://images.unsplash.com">
   <link rel="preload" as="image" href="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=72&fm=avif" imagesrcset="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=960&q=64&fm=avif 960w, https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1400&q=72&fm=avif 1400w" imagesizes="100vw">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Soluciones Logísticas S & M",
+      "url": "https://www.transvago.mx/",
+      "email": "contacto@transvago.mx",
+      "telephone": "+52 55 7000 0000",
+      "areaServed": "México",
+      "description": "Transporte y distribución de carga general, alimentaria y materiales peligrosos en México."
+    }
+  </script>
   <title>Soluciones Logísticas S &amp; M | Transporte y distribución</title>
   <style>
     :root {
@@ -61,6 +73,23 @@
       color: var(--ink);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.55;
+    }
+    .skip-link {
+      position: absolute;
+      top: -44px;
+      left: 10px;
+      z-index: 100;
+      padding: 9px 12px;
+      border-radius: 10px;
+      background: var(--white);
+      color: var(--ink);
+      font-weight: 800;
+      transition: top .2s ease;
+    }
+    .skip-link:focus { top: 10px; }
+    :focus-visible {
+      outline: 3px solid var(--cyan-strong);
+      outline-offset: 3px;
     }
     body.menu-open { overflow: hidden; }
     a { color: inherit; text-decoration: none; }
@@ -269,9 +298,14 @@
       .hero-actions .button { width: 100%; }
       .footer-links { width: 100%; }
     }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { animation: none !important; transition: none !important; }
+    }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
   <header class="site-header">
     <nav class="nav container" aria-label="Navegación principal">
       <a class="brand" href="#inicio" aria-label="Soluciones Logísticas S y M, inicio">
@@ -285,11 +319,11 @@
         <a href="#cobertura">Cobertura</a>
       </div>
       <a class="button nav-cta" href="#contacto" data-track="header_solicitar_cotizacion">Solicitar cotización</a>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">☰</button>
     </nav>
   </header>
 
-  <main>
+  <main id="contenido-principal">
     <section class="hero" id="inicio">
       <div class="container hero-content">
         <span class="eyebrow">Transporte · distribución · control operativo</span>
@@ -469,8 +503,37 @@
       window.dataLayer.push({ event: eventName, ...payload });
     }
 
+    (async () => {
+      try {
+        const { onCLS, onINP, onLCP, onFCP, onTTFB } = await import('https://unpkg.com/web-vitals@4/dist/web-vitals.attribution.js?module');
+        const reportWebVital = (metric) => {
+          trackEvent('web_vital', {
+            metric_name: metric.name,
+            metric_value: Number(metric.value.toFixed(2)),
+            metric_delta: Number(metric.delta.toFixed(2)),
+            metric_rating: metric.rating
+          });
+        };
+        onCLS(reportWebVital);
+        onINP(reportWebVital);
+        onLCP(reportWebVital);
+        onFCP(reportWebVital);
+        onTTFB(reportWebVital);
+      } catch (error) {
+        trackEvent('web_vital_error', { reason: 'web_vitals_library_unavailable' });
+      }
+    })();
+
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
+    function closeMobileMenu() {
+      navLinks.classList.remove('mobile');
+      document.body.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Abrir menú');
+      menuToggle.textContent = '☰';
+    }
+
     menuToggle.addEventListener('click', () => {
       const open = navLinks.classList.toggle('mobile');
       document.body.classList.toggle('menu-open', open);
@@ -479,12 +542,14 @@
       menuToggle.textContent = open ? '×' : '☰';
     });
     navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      navLinks.classList.remove('mobile');
-      document.body.classList.remove('menu-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', 'Abrir menú');
-      menuToggle.textContent = '☰';
+      closeMobileMenu();
     }));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && navLinks.classList.contains('mobile')) {
+        closeMobileMenu();
+        menuToggle.focus();
+      }
+    });
 
     document.querySelectorAll('[data-track]').forEach((element) => {
       element.addEventListener('click', () => {
