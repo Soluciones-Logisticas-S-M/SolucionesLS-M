@@ -9,6 +9,6 @@ Página corporativa estática para GitHub Pages.
 3. Antes de publicar, reemplaza en `index.html`:
    - `REEMPLAZAR@TUDOMINIO.MX` por el correo comercial real.
    - El texto de contacto comercial pendiente por teléfono y correo oficiales.
-4. Cuando el dominio esté configurado, agrega `www.transvago.mx` en la sección de dominio personalizado de GitHub Pages.
+4. Cuando el dominio esté configurado, agrega `www.solucioneslogisticassm.me` en la sección de dominio personalizado de GitHub Pages.
 
 La página no usa framework ni instalación adicional. Las fotografías de fondo se cargan desde Unsplash.
